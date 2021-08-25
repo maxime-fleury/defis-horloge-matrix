@@ -25,12 +25,25 @@ function test(j){
     }
     return count;
 }
-let second_one_timer = 0;
-let second_two_timer = 0;
-let minutes_two_timer = 0;
-let minutes_one_timer = 0;
-let hours_two_timer = 0;
-let hours_one_timer = 0;
+
+var date = new Date();
+var seconds = date.getSeconds();
+var minutes = date.getMinutes();
+var hour = date.getHours();
+ if (hour   < 10) {hour   = "0"+hour;}//makes sure there is two caracteres at least
+    if (minutes < 10) {minutes = "0"+minutes;}//makes sure there is two caracteres at least
+    if (seconds < 10) {seconds = "0"+seconds;}//makes sure there is two caracteres at least
+
+if(seconds %10==0){seconds++;}//makes sure seconds is not 10,20,30,40,50,60 because it does 0/10 and its NaN so it ruins everything
+if(hour %10==0){hour++;}
+if(minutes%10==0){minutes++;}
+let second_two_timer = parseFloat((((seconds)/10) + "").split('.')[0]);
+let second_one_timer = parseFloat((((seconds)/10) + "").split('.')[1]);
+console.log( second_one_timer  + " " + second_two_timer);
+let minutes_two_timer =  parseFloat((((minutes)/10) + "").split('.')[0]);
+let minutes_one_timer = parseFloat((((minutes)/10) + "").split('.')[1]);
+let hours_two_timer = ((hour/10) + "").split('.')[0];
+let hours_one_timer = ((hour/10) + "").split('.')[1];
 let x = setInterval(
     function (){
         if(second_one_timer >= 9){
