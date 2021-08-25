@@ -4,6 +4,9 @@ let seconds_two = document.getElementById("seconds_two");
 let minutes_one = document.getElementById("minutes_one");
 let minutes_two = document.getElementById("minutes_two");
 
+let hours_one = document.getElementById("hours_one");
+let hours_two = document.getElementById("hours_two");
+
 seconds_one.appendChild(test(9));
 seconds_two.appendChild(test(5));
 
@@ -12,6 +15,7 @@ minutes_two.appendChild(test(5));
 
 hours_one.appendChild(test(9));
 hours_two.appendChild(test(5));
+
 function test(j){
     count = document.createElement("div");
     for(i=j;i>=0;i--){
