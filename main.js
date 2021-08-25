@@ -32,11 +32,11 @@ var minutes = date.getMinutes();
 var hour = date.getHours();
  if (hour   < 10) {hour   = "0"+hour;}//makes sure there is two caracteres at least
     if (minutes < 10) {minutes = "0"+minutes;}//makes sure there is two caracteres at least
-    if (seconds < 10) {seconds = "0"+seconds;}//makes sure there is two caracteres at least
+    if (seconds < 10) {seconds = seconds+"0";}//makes sure there is two caracteres at least
 
-if(seconds %10==0){seconds++;}//makes sure seconds is not 10,20,30,40,50,60 because it does 0/10 and its NaN so it ruins everything
-if(hour %10==0){hour++;}
-if(minutes%10==0){minutes++;}
+if(parseFloat(seconds) %10==0){seconds = parseFloat(seconds)+1;}//makes sure seconds is not 10,20,30,40,50,60 because it does 0/10 and its NaN so it ruins everything
+if(parseFloat(hour) %10==0){hour = parseFloat(hour)+1;}
+if(parseFloat(minutes)%10==0){minutes = parseFloat(minutes)+1;}
 let second_two_timer = parseFloat((((seconds)/10) + "").split('.')[0]);
 let second_one_timer = parseFloat((((seconds)/10) + "").split('.')[1]);
 console.log( second_one_timer  + " " + second_two_timer);
@@ -46,15 +46,15 @@ let hours_two_timer = ((hour/10) + "").split('.')[0];
 let hours_one_timer = ((hour/10) + "").split('.')[1];
 let x = setInterval(
     function (){
-        if(second_one_timer >= 9){
+        if(second_one_timer +1 > 10){
             second_one_timer = 0;
             if(second_two_timer >= 5){
                 second_two_timer = 0;
                 if(minutes_one_timer >= 9){
                     minutes_one_timer = 0;
-                    if(minutes_two_timer >= 5){
+                    if(minutes_two_timer > 5){
                         minutes_two_timer = 0;
-                        if(hours_one_timer >= 9){
+                        if(hours_one_timer > 9){
                             hours_one_timer = 0;
                             if(hours_two_timer >= 5){
                                 hours_one_timer = 0;
