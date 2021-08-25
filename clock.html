@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+</head>
+<style>
+    #horl{
+
+    }
+    #greenbar{
+        margin-left:-158px;
+        margin-top:250px;
+        border:white solid 1px;
+    }
+    #container{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction:row;
+    }
+    body{
+        font-size:25px;
+    }
+</style>
+<body style='color:white;background:black;'>
+    <div id='container'>
+        <div id='horl' style='display:flex; '>
+            <div id='hours' style='display:flex;z-index:2;'>
+                <div id='hours_two'></div>
+                <div id='hours_one'></div>
+            </div>
+            <div id='minutes' style='display:flex; padding-left:20px;z-index:2;'>
+                <div id='minutes_two'></div>
+                <div id='minutes_one'></div>
+            </div>
+            <div id='seconds' style='display:flex; padding-left:20px;z-index:2;'>
+                <div id='seconds_two'></div>
+                <div id='seconds_one'></div>
+            </div>
+        </div>
+        <div id='greenbar' style="display:flex; width:200px; height:30px; background:green;"></div>
+    </div>
+ 
+<script src='main.js'></script>
+</body>
+</html>
